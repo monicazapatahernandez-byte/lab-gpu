@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --job-name=pi_gpu
+#SBATCH --partition=bohr-gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=00:10:00
+#SBATCH --output=pi_gpu_%j.out
+#SBATCH --chdir=/home/alumno27/lab-gpu
+
+module load anaconda/2025.06
+
+echo "------------------------------------"
+echo "Running pi-gpu with N = 1e7"
+echo "------------------------------------"
+
+ipython pi-gpu-alumno27.ipynb 10000000
+
+echo "------------------------------------"
+echo "Running pi-gpu with N = 1e8"
+echo "------------------------------------"
+
+ipython pi-gpu-alumno27.ipynb 100000000
+
+echo "------------------------------------"
+echo "finish"
+

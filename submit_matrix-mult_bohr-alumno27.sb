@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=matmul_torch
+#SBATCH --partition=bohr-gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=00:10:00
+#SBATCH --output=matmul_%j.out
+#SBATCH --chdir=/home/alumno27/lab-gpu
+
+module load anaconda/2025.06
+
+ipython matrix-mult-alumno27.ipynb
+
